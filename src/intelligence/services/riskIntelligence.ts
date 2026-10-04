@@ -1,3 +1,9 @@
+import { evaluate } from '../rules/ruleEngine'
+import type { AggregatedRisk } from '../types/risk'
+
+export const assessRisk = async (event: any): Promise<AggregatedRisk> => {
+  return evaluate(event)
+}
 import { InputData, RuleEvaluation, RiskResult, Severity } from '../types/risk';
 import { runRules, RuleDef } from '../rules/ruleEngine';
 import { anomalyRules } from '../rules/riskRules';

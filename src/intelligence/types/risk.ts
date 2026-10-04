@@ -1,6 +1,29 @@
-export type Category = 'Anomaly' | 'Frequency' | 'DataInconsistency' | 'AccessBehavior' | 'Regulatory';
+export type Severity = 'LOW' | 'MODERATE' | 'HIGH' | 'CRITICAL' | 'NONE'
 
-export type Severity = 'LOW' | 'MODERATE' | 'HIGH' | 'CRITICAL' | 'NONE';
+export interface EvidenceItem {
+  key: string
+  value: any
+}
+
+export interface RuleResult {
+  ruleId: string
+  ruleName: string
+  category: string
+  triggered: boolean
+  observedValue: any
+  threshold: any
+  points: number
+  explanation: string
+  recommendedAction: string
+  evidence: EvidenceItem[]
+}
+
+export interface AggregatedRisk {
+  score: number
+  severity: Severity
+  rules: RuleResult[]
+}
+export type Category = 'Anomaly' | 'Frequency' | 'DataInconsistency' | 'AccessBehavior' | 'Regulatory';
 
 export interface InputData {
   id?: string;

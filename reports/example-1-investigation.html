@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Investigation View - example-1</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:20px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid #e6e6e6;padding:8px;text-align:left}
+    th{background:#f6f6f6}
+  </style>
+</head>
+<body>
+  <h1>Investigation: example-1</h1>
+  <p><strong>Risk Score:</strong> 35 <span style="display:inline-block;padding:4px 8px;border-radius:12px;background:#F2C94C;color:#fff;font-weight:600;font-size:12px">MODERATE</span></p>
+  <p><strong>Severity:</strong> MODERATE</p>
+  <p><strong>Explanation:</strong> 2 predefined risk rules were triggered: Activity > 3x Baseline, Repeated events > 10.</p>
+  <p><strong>Recommended Action:</strong> Investigate rapid activity increase. | Escalate: high repetition of events.</p>
+
+  <h2>Rules Triggered</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Rule name</th>
+        <th>Description</th>
+        <th>Observed value</th>
+        <th>Threshold</th>
+        <th>Points</th>
+        <th>Status</th>
+        <th>Explanation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+    <td>Activity > 2x Baseline</td>
+    <td>Activity is more than twice the historical baseline.</td>
+    <td>4.2</td>
+    <td>">2x"</td>
+    <td>0</td>
+    <td>OK</td>
+    <td>Not triggered</td>
+  </tr>
+<tr>
+    <td>Activity > 3x Baseline</td>
+    <td>Activity is more than three times the historical baseline.</td>
+    <td>4.2</td>
+    <td>">3x"</td>
+    <td>+20</td>
+    <td>TRIGGERED</td>
+    <td>Activity is 4.2x baseline (>3x).</td>
+  </tr>
+<tr>
+    <td>Activity > 5x Baseline</td>
+    <td>Activity is more than five times the historical baseline.</td>
+    <td>4.2</td>
+    <td>">5x"</td>
+    <td>0</td>
+    <td>OK</td>
+    <td>Not triggered</td>
+  </tr>
+<tr>
+    <td>Repeated events > 5</td>
+    <td>Number of repeated events exceeds 5 within a short period.</td>
+    <td>13</td>
+    <td>">5"</td>
+    <td>0</td>
+    <td>OK</td>
+    <td>Not triggered</td>
+  </tr>
+<tr>
+    <td>Repeated events > 10</td>
+    <td>Number of repeated events exceeds 10 within a short period.</td>
+    <td>13</td>
+    <td>">10"</td>
+    <td>+15</td>
+    <td>TRIGGERED</td>
+    <td>Repeated events: 13 (>10).</td>
+  </tr>
+<tr>
+    <td>Repeated events > 20</td>
+    <td>Number of repeated events exceeds 20 within a short period.</td>
+    <td>13</td>
+    <td>">20"</td>
+    <td>0</td>
+    <td>OK</td>
+    <td>Not triggered</td>
+  </tr>
+<tr>
+    <td>Repeated previous issue</td>
+    <td>There are repeated previous issues related to this entity.</td>
+    <td>0</td>
+    <td>">0"</td>
+    <td>0</td>
+    <td>OK</td>
+    <td>Not triggered</td>
+  </tr>
+<tr>
+    <td>Requirement approaching deadline</td>
+    <td>A regulatory requirement is approaching its deadline.</td>
+    <td>null</td>
+    <td>"<=7 days"</td>
+    <td>0</td>
+    <td>OK</td>
+    <td>Not triggered</td>
+  </tr>
+<tr>
+    <td>Requirement overdue</td>
+    <td>A regulatory requirement is overdue.</td>
+    <td>null</td>
+    <td>"<0 days (overdue)"</td>
+    <td>0</td>
+    <td>OK</td>
+    <td>Not triggered</td>
+  </tr>
+<tr>
+    <td>Critical compliance overdue</td>
+    <td>A critical compliance requirement is overdue.</td>
+    <td>null</td>
+    <td>"<-30 days"</td>
+    <td>0</td>
+    <td>OK</td>
+    <td>Not triggered</td>
+  </tr>
+    </tbody>
+  </table>
+</body>
+</html>
